@@ -8,13 +8,11 @@
 
 class Table
 {
-private:
-    QList<Line> lines;
-
 public:
     Table();
     ~Table();
-
+    QList<Line> lines;
+    QVector<Line> vec;
     void readData();
 
 };

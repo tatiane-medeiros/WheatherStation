@@ -1,28 +1,23 @@
 #include <QCoreApplication>
+#include <QApplication>
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
 #include "table.h"
+#include "tablewindow.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-//    QFile file("meteorology.php");
-//    Q_ASSERT_X(file.open(QIODevice::ReadOnly), "error:", "file not found.");
+   // QCoreApplication a(argc, argv);
 
-//   // while (!file.atEnd()) {
-//        file.read(189);
-//        //221 titulos colunas
-//        //A303 inicio linha ?????
-//        //não sei o que to fazendo da minha vida
-//         QByteArray data = file.read(14);
-//         qDebug() << data  <<endl;
+//    Table *t = new Table();
+//    t->readData();
+//    qDebug()<< t->vec.at(1).data();
+//    qDebug()<< t->vec.at(1).colums[0];
+    QApplication a(argc, argv);
+    TableWindow w;
+    w.show();
 
-//         data = file.read(5);
-//          qDebug() << data  <<endl;
-    Table t;
-    t.readData();
-
-    return 0;
+    return a.exec();
 }

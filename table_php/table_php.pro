@@ -4,9 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core
-
-QT       -= gui
+QT    += core gui
+QT    += widgets
 
 TARGET = table_php
 CONFIG   += console
@@ -17,8 +16,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     table.cpp \
-    line.cpp
+    line.cpp \
+    tablewindow.cpp
 
 HEADERS += \
     table.h \
-    line.h
+    line.h \
+    tablewindow.h
+
+FORMS += \
+    tablewindow.ui

@@ -27,12 +27,12 @@ void Table::readData()
             ch = file.read(9);
             if(!ch.contains("<br>A303")) break;
             aux = file.read(10);    //Lê a data da linha atual
-            curr.data = curr.data.fromString(QString(aux), "dd/MM/yyyy");
+            curr.m_data = curr.m_data.fromString(QString(aux), "dd/MM/yyyy");
 
             file.read(1);
             aux.clear();
             aux = file.read(2); //Lê a hora da linha atual
-            curr.hora = aux.toInt();
+            curr.m_hora = aux.toInt();
             file.read(1);
             aux.clear();
 
@@ -93,10 +93,9 @@ void Table::readData()
             curr.colums[i] = aux.toDouble();    //Chuva (mm)
 
             lines.append(curr);
-            curr.printL();
-
+            vec.append(curr);
+           // curr.printL();
       }
-
 
 }
 

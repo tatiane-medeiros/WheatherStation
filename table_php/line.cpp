@@ -13,7 +13,7 @@ Line::~Line()
 void Line::printL()
 {
     using namespace std;
-    qDebug() << data << hora;
+    qDebug() << m_data << m_hora;
     for(int i = 0; i< 17; ++i){
         std::cout << colums[i] << "*";
     }
@@ -22,9 +22,27 @@ void Line::printL()
 
 void Line::clear()
 {
-    hora = 0;
+    m_hora = 0;
     for(int i = 0; i< 17; ++i){
          colums[i] = 0;
     }
+}
+
+ QString Line::data() const
+{
+    QString aux;
+    aux.append(QString::number(m_data.day()).rightJustified(2,'0'));
+    aux.append("/" );
+    aux.append(QString::number(m_data.month()).rightJustified(2,'0'));
+    aux.append("/" );
+    aux.append(QString::number(m_data.year()).rightJustified(2,'0'));
+    return aux;
+}
+
+QString Line::hora() const
+{
+    QString  aux;
+    aux.append(QString::number(m_hora).rightJustified(2,'0'));
+    return aux;
 }
 
