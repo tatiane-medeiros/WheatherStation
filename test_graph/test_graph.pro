@@ -13,11 +13,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    weatherdata.cpp \
+    graphwindow.cpp\
+    line.cpp\
+    table.cpp
 
 
-HEADERS  += mainwindow.h \
-    qcustomplot.h
+HEADERS  += \
+    qcustomplot.h \
+    weatherdata.h \
+    graphwindow.h \
+    line.h\
+    table.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    graphwindow.ui
