@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "newwindow.h"
+#include "tablewindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,15 +17,14 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_myButton_clicked();
-    void openNewWindow();
+    void on_tableButton_clicked();
 
 protected:
-void  closeEvent(QCloseEvent*);
+    void  closeEvent(QCloseEvent*);
 
 private:
     Ui::MainWindow *ui;
-    NewWindow *mMyNewWindow;
+    TableWindow *myTableWindow;
 };
 
 #endif // MAINWINDOW_H
