@@ -15,12 +15,13 @@ class TableWindow : public QMainWindow
 public:
     explicit TableWindow(QWidget *parent = 0);
     ~TableWindow();
+    void setTable(Table *t);
 
-protected:
     void createTable();
 
 private:
     Ui::TableWindow *ui;
+    Table *myTable;
 
 };
 

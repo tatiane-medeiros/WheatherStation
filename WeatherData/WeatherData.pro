@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 TARGET = WeatherData
 TEMPLATE = app
@@ -16,12 +16,21 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     line.cpp \
     table.cpp \
-    tablewindow.cpp
+    tablewindow.cpp\
+    qcustomplot.cpp \
+    graphwindow.cpp
+
 
 HEADERS  += mainwindow.h \
     line.h \
     table.h \
-    tablewindow.h
+    tablewindow.h\
+    qcustomplot.h\
+   # datafunctions.h \
+    graphwindow.h
 
 FORMS    += mainwindow.ui \
-    tablewindow.ui
+    tablewindow.ui \
+    graphwindow.ui
+
+RC_FILE += dialogo.rc

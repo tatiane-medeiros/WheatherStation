@@ -26,6 +26,7 @@ public:
     QVector<double> humidMonth(int m, int y);
     QVector<double> dewMonth(int m, int y);
     QVector<double> rainMonth(int m, int y);
+    QVector<QString> datesLabels(int d, int m, int y, int size);
 
 };
 

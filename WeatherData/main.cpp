@@ -11,10 +11,5 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-//        Table *t = new Table();
-//       t->readData();
-//        t->setDailyData();
-//        qDebug() << t->humidMonth(5,2017);
-
     return a.exec();
 }

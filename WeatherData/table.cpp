@@ -211,3 +211,20 @@ QVector<double> Table::rainMonth(int m, int y)
 {
     return selectDailyData(4,m,y);
 }
+
+QVector<QString> Table::datesLabels(int d, int m, int y, int size)
+{
+    QVector<QString> temp;
+    QDate a;
+    QString date;
+    a.setDate(y,m,d);
+    for(int i =0; i<size; ++i) {
+        date.append(QString::number(a.day()).rightJustified(2,'0') + "/" + QString::number(a.month()).rightJustified(2,'0') + "/"+ QString::number(a.year()));
+        temp.append(date);
+        date.clear();
+        a =a.addDays(1);
+
+    }
+
+    return temp;
+}
