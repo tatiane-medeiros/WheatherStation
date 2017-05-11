@@ -25,7 +25,9 @@ private slots:
     void on_barChartButton_clicked();
 
 protected:
-    void  closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent*);
+    void settings();
+    void showMessage();
 
 private:
     Ui::MainWindow *ui;

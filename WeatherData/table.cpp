@@ -26,7 +26,6 @@ void Table::readData()
             if(!ch.contains("br>A303")) break;
             aux = file.read(10);    //Lê a data da linha atual
             curr.setDate(QDate::fromString(QString(aux), "dd/MM/yyyy"));
-            qDebug() <<aux;
 
             file.read(1);
             aux.clear();
@@ -102,10 +101,8 @@ void Table::readData()
             }
 
             curr.setVariable(i, aux.toDouble());    //Chuva (mm)
-
-            lines.append(curr);
             vec.append(curr);
-           // curr.printL();
+
       }
 
 }
@@ -145,14 +142,23 @@ void Table::setDailyData()
 
 
 
-void Table::selectFromDate(QDate start, QDate end)
+QVector<Line> Table::selectFromDate(QDate start, QDate end)
 {
+    QVector<Line> select;
+    Line aux;
     for(int i=0; i<vec.count(); ++i){
-        if((vec.at(i).getDate() >= start) && (vec.at(i).getDate() <= end)){
-            qDebug()<< vec.at(i).data()<<" "<<vec.at(i).hora();
+        aux = vec.at(i);
+
+        if((aux.getDate() >= start) && (aux.getDate() <= end) ){
+            select.append(aux);
+            qDebug() <<"this"<< aux.data();
         }
-        //parar quando passar do intervalo
+
+         //parar quando passar do intervalo
+        else if(aux.getDate() > end)   break;
     }
+
+       return select;
 
 }
 

@@ -17,7 +17,7 @@ public:
     ~TableWindow();
     void setTable(Table *t);
 
-    void createTable();
+    void createTable(QDate start, QDate end);
 
 private:
     Ui::TableWindow *ui;

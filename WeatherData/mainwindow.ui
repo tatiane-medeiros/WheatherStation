@@ -32,7 +32,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QDateEdit" name="dateEdit_2"/>
+      <widget class="QDateEdit" name="dateEdit"/>
      </item>
      <item>
       <widget class="QLabel" name="label_2">
@@ -42,7 +42,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QDateEdit" name="dateEdit"/>
+      <widget class="QDateEdit" name="dateEdit_2"/>
      </item>
      <item>
       <widget class="QPushButton" name="tableButton">

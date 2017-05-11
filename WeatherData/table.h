@@ -12,13 +12,12 @@ class Table
 public:
     Table();
     ~Table();
-    QList<Line> lines;
     QVector<Line> vec;
     //dados diarios: temp. media, umid. media, pressão media, pto. orvalho, chuva.
     QHash<QDate, QVector<double> > dailyData;
     void readData();
     void setDailyData();
-    void selectFromDate(QDate start, QDate end);
+    QVector<Line> selectFromDate(QDate start, QDate end);
     void printDailyData();
     QVector<double> selectDailyData(int index, int m, int y);
     QVector<double> temperatureMonth(int m, int y);
