@@ -112,6 +112,7 @@ void Table::setDailyData()
     QDate curr;
     QVector<double> lineData;
     QVector<double> line;
+    int count = 0;
     bool reset = true;
 
      for(int i=0; i<vec.count(); ++i){
@@ -122,6 +123,7 @@ void Table::setDailyData()
              line.clear();
              lineData.clear();
              lineData.resize(5);
+             count = 0;
              reset = false;
 
          }
@@ -130,8 +132,9 @@ void Table::setDailyData()
          lineData[2] += vec.at(i).getVariable(6);    //pto. orvalho
          lineData[3] += vec.at(i).getVariable(9);    //pressão
          lineData[4] += vec.at(i).getVariable(16);   //chuva
+         count++;
 
-         if(vec.at(i).getHour() == 0){
+         if(count == 24){
              line << lineData[0]/24 << lineData[1]/24 << lineData[2]/24 << lineData[3]/24 << lineData[4];
              dailyData.insert(curr, line);
              reset = true;
@@ -151,7 +154,7 @@ QVector<Line> Table::selectFromDate(QDate start, QDate end)
 
         if((aux.getDate() >= start) && (aux.getDate() <= end) ){
             select.append(aux);
-            qDebug() <<"this"<< aux.data();
+
         }
 
          //parar quando passar do intervalo

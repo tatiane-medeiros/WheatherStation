@@ -135,7 +135,7 @@ void MainWindow::on_barChartButton_clicked()
     else  if(ui->radioButtonPress->isChecked()){
         temp = myTable->pressureMonth(m,2017);
         name = "Pressão";
-        min = 1000;
+        min = 950;
         max = 1010;
     }
     else  if(ui->radioButtonHumid->isChecked()){

@@ -211,6 +211,7 @@ void GraphWindow::barChart(QCustomPlot *customPlot, QVector<double> data, QVecto
   textTicker->addTicks(ticks, labels); //eixo x por data
   customPlot->xAxis->setTicker(textTicker);
   customPlot->xAxis->setSubTicks(false);
+  customPlot->xAxis->setTickLabelRotation(60);
   customPlot->xAxis->setTickLength(0, 4);
   customPlot->xAxis->setRange(0, data.count()); //tamanho das barras se ajustam ao numero de barras
   customPlot->xAxis->setBasePen(QPen(Qt::white));
@@ -282,14 +283,16 @@ void GraphWindow::lineChart(QCustomPlot *customPlot, QVector<double> data, QVect
     customPlot->graph()->rescaleAxes(true);
 
   // zoom out a bit:
-  customPlot->yAxis->scaleRange(1.1, customPlot->yAxis->range().center());
+    customPlot->yAxis->scaleRange(1.1, customPlot->yAxis->range().center());
+//    customPlot->yAxis->setRangeLower(customPlot->yAxis->range().center()/2);
+//    customPlot->yAxis->setRangeLower(customPlot->yAxis->range().center());
   customPlot->xAxis->scaleRange(1.1, customPlot->xAxis->range().center());
+
   // set blank axis lines:
   customPlot->xAxis->setTicker(textTicker);
-  //customPlot->xAxis->setTicks(false);
   customPlot->yAxis->setTicks(true);
-  //customPlot->xAxis->setTickLabels(false);
   customPlot->yAxis->setTickLabels(true);
+  customPlot->xAxis->setTickLabelRotation(60);
   // make top right axes clones of bottom left axes:
   customPlot->axisRect()->setupFullAxesBox();
 }
