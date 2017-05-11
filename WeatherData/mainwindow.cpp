@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Visualização de Dados Meteorológicos");
     myTableWindow = new TableWindow();
     settings();
     myTable = new Table();
@@ -76,6 +77,7 @@ void MainWindow::on_lineChartButton_clicked()
         name = "Temperatura";
         min = 0;
         max = 40;
+
     }
     else  if(ui->radioButtonPress->isChecked()){
         temp = myTable->pressureMonth(m,2017);
@@ -107,6 +109,7 @@ void MainWindow::on_lineChartButton_clicked()
     }
 
     if(m != 0){
+        myGraph->setWindowTitle("Gráfico da " +name+ " no mês de " + myTable->toStringMonth(m));
         labels = myTable->datesLabels(1,m,2017,temp.count());
         myGraph->createChart(1,temp, labels, name,0,0);
         myGraph->show();
@@ -162,6 +165,7 @@ void MainWindow::on_barChartButton_clicked()
     }
 
     if(m != 0){
+         myGraph->setWindowTitle("Gráfico da " +name+ " no mês de " + myTable->toStringMonth(m));
         labels = myTable->datesLabels(1,m,2017,temp.count());
         myGraph->createChart(0,temp, labels, name,min, max);
         myGraph->show();

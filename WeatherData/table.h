@@ -19,6 +19,7 @@ public:
     void setDailyData();
     QVector<Line> selectFromDate(QDate start, QDate end);
     void printDailyData();
+    QString toStringMonth(int m);
     QVector<double> selectDailyData(int index, int m, int y);
     QVector<double> temperatureMonth(int m, int y);
     QVector<double> pressureMonth(int m, int y);
